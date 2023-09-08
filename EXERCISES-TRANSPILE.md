@@ -54,7 +54,7 @@ Run one of the reactors in a web browser, with the following HTML page and a loc
 
 Transpile `reactors/say-name.wasm`, which has an import to `get-name`.
 
-Use `jco transpile reactors/say-name.wasm --map get-name=../get-name.js` to map the get name dependency to a local implementation.
+Use `jco transpile reactors/say-name.wasm --map get-name=../get-name.js -o say-name` to map the get name dependency to a local implementation.
 
 Implement `get-name.js`:
 
@@ -68,7 +68,7 @@ export function getName () {
 
 Update `test.js` to import `hello` from `say-name/say-name.js`.
 
-Run `node say-name/say-name.js`.
+Run `node test.js`.
 
 If feeling adventurous, try using `--map get-name=../get-name.js#get-name` to see how nested interface mappings can be supported.
 
